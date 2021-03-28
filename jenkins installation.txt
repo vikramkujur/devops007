@@ -1,0 +1,23 @@
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum upgrade
+sudo yum install jenkins java-1.8.0-openjdk-devel
+sudo systemctl daemon-reload
+
+
+
+Start Jenkins
+You can start the Jenkins service with the command:
+
+	sudo systemctl start jenkins
+
+You can check the status of the Jenkins service using the command:
+
+	sudo systemctl status jenkins
+
+If everything has been set up correctly, you should see an output like this:
+
+	Loaded: loaded (/etc/rc.d/init.d/jenkins; generated)
+	Active: active (running) since Tue 2018-11-13 16:19:01 +03; 4min 57s ago
+	...
